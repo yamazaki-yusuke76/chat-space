@@ -8,11 +8,11 @@
 |password|string|null: false|
 
 ### Association
-- has_many :group_users
-- has_many :group, through: group_users
-- has_many :message
+- has_many :groups_users
+- has_many :groups, through: group_users
+- has_many :messages
 
-## messageテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|text|
@@ -24,15 +24,15 @@
 - belongs_to :user
 - belongs_to :group
 
-## groupテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false,|
+|name|string|null: false,|
 
 ### Association
 - has_many :group_users
 - has_many :users, through: group_users
-- has_many :message
+- has_many :messages
 
 ## groups_usersテーブル
 
